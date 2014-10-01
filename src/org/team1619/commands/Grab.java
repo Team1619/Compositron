@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @author Andrew
  */
-public class TeleopGrab extends Command {
+public class Grab extends Command {
 
     protected void initialize() {
         

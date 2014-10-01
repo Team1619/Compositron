@@ -17,11 +17,11 @@ public class Rollers extends Subsystem {
         
     }
     
-    protected void rollersForward() {
+    protected void setRollers(float speed) {
         
     }
     
-    protected void rollersReverse() {
+    protected void stopRollers() {
         
     }
     

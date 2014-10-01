@@ -7,6 +7,9 @@ package org.team1619;
  * floating around.
  */
 public class RobotMap {
+    public static final int rightStick_port = 0;
+    public static final int leftStick_port = 1;
+    
     public static final int motor_controlRight_drive = 1;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.

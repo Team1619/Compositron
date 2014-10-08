@@ -5,7 +5,10 @@
  */
 package org.team1619.subsystems;
 
+import edu.wpi.first.wpilibj.CANJaguar;
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.team1619.RobotMap;
 
 /**
  *
@@ -13,16 +16,22 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Rollers extends Subsystem {
     
+    private final CANJaguar rollerMotor;
+    
+    protected Rollers() throws CANTimeoutException {
+        rollerMotor = new CANJaguar(RobotMap.motorID_rollers);
+    }
+    
     protected void initDefaultCommand() {
         
     }
     
-    protected void setRollers(float speed) {
-        
+    protected void setRollers(double speed) throws CANTimeoutException {
+        rollerMotor.setX(speed);
     }
     
-    protected void stopRollers() {
-        
+    protected void stopRollers() throws CANTimeoutException {
+        rollerMotor.disableControl();
     }
     
 }

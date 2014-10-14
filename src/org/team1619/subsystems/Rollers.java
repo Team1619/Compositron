@@ -16,10 +16,10 @@ import org.team1619.RobotMap;
  */
 public class Rollers extends Subsystem {
     
-    private final CANJaguar rollerMotor;
+    private final CANJaguar rollersMotor;
     
     protected Rollers() throws CANTimeoutException {
-        rollerMotor = new CANJaguar(RobotMap.motorID_rollers);
+        rollersMotor = new CANJaguar(RobotMap.motorID_rollers);
     }
     
     protected void initDefaultCommand() {
@@ -27,11 +27,11 @@ public class Rollers extends Subsystem {
     }
     
     protected void setRollers(double speed) throws CANTimeoutException {
-        rollerMotor.setX(speed);
+        rollersMotor.setX(speed);
     }
     
     protected void stopRollers() throws CANTimeoutException {
-        rollerMotor.disableControl();
+        rollersMotor.disableControl();
     }
     
 }

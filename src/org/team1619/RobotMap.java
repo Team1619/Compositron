@@ -10,7 +10,10 @@ public class RobotMap {
     public static final int rightStick_port = 0;                // ID for the right joystick port
     public static final int leftStick_port = 1;                 // ID for the left joystick port
     
-    public static final int motor_controlRight_drive = 1;
+    public static final int motorID_rightFrontDrive = 1;        // IDs for the drive motors (for now only 4, need 6)
+    public static final int motorID_rightRearDrive = 1;
+    public static final int motorID_leftFrontDrive = 1;
+    public static final int motorID_leftRearDrive = 1;
     
     public static final int motorID_rollers = 15;                 // ID for the roller motor
     // For example to map the left and right motors, you could define the

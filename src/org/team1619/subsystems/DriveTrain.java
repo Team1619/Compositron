@@ -6,10 +6,10 @@
 package org.team1619.subsystems;
 
 import edu.wpi.first.wpilibj.CANJaguar;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.team1619.RobotMap;
+import org.team1619.SixMotorRobotDrive;
 
 /**
  *
@@ -17,19 +17,25 @@ import org.team1619.RobotMap;
  */
 public class DriveTrain extends Subsystem {
 
-    private final CANJaguar rightFrontDriveMotor;
-    private final CANJaguar rightRearDriveMotor;
-    private final CANJaguar leftFrontDriveMotor;
+    private final CANJaguar leftForeDriveMotor;
+    private final CANJaguar leftMidDriveMotor;
     private final CANJaguar leftRearDriveMotor;
-    private final RobotDrive driveTrain;
+    private final CANJaguar rightForeDriveMotor;
+    private final CANJaguar rightMidDriveMotor;
+    private final CANJaguar rightRearDriveMotor;
+   
+    private final SixMotorRobotDrive driveTrain;
     
     protected DriveTrain() throws CANTimeoutException {
-        rightFrontDriveMotor = new CANJaguar(RobotMap.motorID_rightFrontDrive);
-        rightRearDriveMotor = new CANJaguar(RobotMap.motorID_rightRearDrive);
-        leftFrontDriveMotor = new CANJaguar(RobotMap.motorID_leftFrontDrive);
+        leftForeDriveMotor = new CANJaguar(RobotMap.motorID_leftForeDrive);
+        leftMidDriveMotor = new CANJaguar(RobotMap.motorID_leftMidDrive);
         leftRearDriveMotor = new CANJaguar(RobotMap.motorID_leftRearDrive);
+        rightForeDriveMotor = new CANJaguar(RobotMap.motorID_rightForeDrive);
+        rightMidDriveMotor = new CANJaguar(RobotMap.motorID_rightMidDrive);
+        rightRearDriveMotor = new CANJaguar(RobotMap.motorID_rightRearDrive);
         
-        driveTrain = new RobotDrive(leftFrontDriveMotor, leftRearDriveMotor, rightFrontDriveMotor, rightRearDriveMotor);
+        driveTrain = new SixMotorRobotDrive(leftForeDriveMotor, leftMidDriveMotor, leftRearDriveMotor, 
+                rightForeDriveMotor, rightMidDriveMotor, rightRearDriveMotor);
     }
     
     protected void initDefaultCommand() {   

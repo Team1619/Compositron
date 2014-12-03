@@ -9,6 +9,7 @@ package org.team1619;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -29,10 +30,15 @@ public class RobotTemplate extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-        // instantiate the command used for the autonomous period
 
-        // Initialize all subsystems
-        CommandBase.init();
+            // instantiate the command used for the autonomous period
+            
+            // Initialize all subsystems
+        try {
+            CommandBase.init();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void autonomousInit() {

@@ -6,10 +6,12 @@
 package org.team1619.subsystems;
 
 import edu.wpi.first.wpilibj.CANJaguar;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.team1619.RobotMap;
 import org.team1619.SixMotorRobotDrive;
+import org.team1619.commands.Drive;
 
 /**
  *
@@ -26,7 +28,11 @@ public class DriveTrain extends Subsystem {
    
     private final SixMotorRobotDrive driveTrain;
     
-    protected DriveTrain() throws CANTimeoutException {
+    public void initDefaultCommand() {   
+        this.setDefaultCommand(new Drive());
+    }
+    
+    public DriveTrain() throws CANTimeoutException {
         leftForeDriveMotor = new CANJaguar(RobotMap.motorID_leftForeDrive);
         leftMidDriveMotor = new CANJaguar(RobotMap.motorID_leftMidDrive);
         leftRearDriveMotor = new CANJaguar(RobotMap.motorID_leftRearDrive);
@@ -38,8 +44,13 @@ public class DriveTrain extends Subsystem {
                 rightForeDriveMotor, rightMidDriveMotor, rightRearDriveMotor);
     }
     
-    protected void initDefaultCommand() {   
-        
+    public void drive(Joystick stick)
+    {
+        driveTrain.arcadeDrive(stick);
     }
-
+    
+    public void stop()
+    {
+        driveTrain.stopMotor();
+    }
 }

@@ -18,7 +18,7 @@ public class Rollers extends Subsystem {
     
     private final CANJaguar rollersMotor;
     
-    protected Rollers() throws CANTimeoutException {
+    public Rollers() throws CANTimeoutException {
         rollersMotor = new CANJaguar(RobotMap.motorID_rollers);
     }
     

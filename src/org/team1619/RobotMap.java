@@ -13,11 +13,11 @@ public class RobotMap {
     public static final int motorID_leftForeDrive = 1;          //
     public static final int motorID_leftMidDrive = 1;           //
     public static final int motorID_leftRearDrive = 1;          //
-    public static final int motorID_rightForeDrive = 1;        // IDs for the drive motors 
+    public static final int motorID_rightForeDrive = 1;         // IDs for the drive motors (to be updated)
     public static final int motorID_rightMidDrive = 1;          // 
     public static final int motorID_rightRearDrive = 1;         //
     
-    public static final int motorID_rollers = 15;                 // ID for the roller motor
+    public static final int motorID_rollers = 15;               // ID for the roller motor
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static final int leftMotor = 1;
